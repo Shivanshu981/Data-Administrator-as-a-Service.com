@@ -1,0 +1,190 @@
+<%-- 
+    Document   : Web_Administrator_Sign_Page
+    Created on : Dec 17, 2017, 7:44:51 PM
+    Author     : Shivanshu Gupta
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Sign In/Sign Up</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        
+        <style>
+             
+            
+            .body
+            {
+                background-color: #666666;
+                font-family: century gothic;
+                color: white;
+            }
+            #Sign_Up
+            {
+                border: 1px #666666 solid;
+                padding: 10px 10px 10px 10px;
+                margin-left: 200px;
+                margin-top: 90px;
+                width: 35%;
+                color: white;
+                font-family: sans-serif;
+                overflow: hidden;
+              
+                float: left;
+            }
+            .input_gap
+            {
+                padding-bottom: 15px;
+                string-set: none;
+            }
+            #sign_in
+            {
+                float: right;
+                width: 40%;
+                
+                
+                margin-top: 90px;
+                padding-left: 45px;
+                padding: 10px;
+            }
+            .sign_up_heading
+            {
+                padding-left: 230px;
+                
+            }
+            .sign_in_heading
+            {
+                padding-left: 210px;
+                
+            }
+            .sign_in_button
+            {
+                padding-left: 345px;
+            }
+            .sign_up_button
+            {
+                padding-left: 319px;
+            }
+            
+            
+        </style>
+    </head>
+    <body class="body">
+        <h1 align="center">Let's get Started</h1>
+        <form name="sign_up_form" action="sign_up.jsp" method="POST">
+            
+            <div id="Sign_Up">
+                <h3 class="sign_up_heading">Sign Up</h3>
+            <table border="0">
+                
+                <tbody>
+                    <tr>
+                        <td class="input_gap">First Name </td>
+                        <td class="input_gap"><input type="text" placeholder="John" size="50" name="first_name_text" value=""/></td>
+                    </tr>
+                    <tr>
+                        <td class="input_gap">Last Name </td>
+                        <td class="input_gap"><input type="text" placeholder="Paul" size="50" name="last_name_text" value=""/></td>
+                    </tr>
+                    <tr>
+                        <td class="input_gap">Email </td>
+                        <td class="input_gap"><input type="email" placeholder="myemail@mail.com" size="50" name="email_text" value=""/></td>
+                    </tr>
+                    <tr>
+                        <td class="input_gap">Contact no. </td>
+                        <td class="input_gap"><input type="text" size="50" name="contact_no_text" value=""/></td>
+                    </tr>
+                    <tr>
+                        <td class="input_gap">Date of Birth</td>
+                        <td class="input_gap"><input type="text" size="20" name="contact_no_text" value="" placeholder="DD/MM/YYYY"/></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="input_gap">Address </td>
+                        <td class="input_gap"><input type="text" size="50" name="address_text" value=""/></td>
+                    </tr>
+                    <tr>
+                        <td class="input_gap">Father Name </td>
+                        <td class="input_gap"><input type="text" size="50" name="father_text" value="" placeholder="Jorden Paul"/></td>
+                    </tr>
+                    <tr>
+                        <td class="input_gap">Country </td>
+                        <td><select name="country_selection">
+                                <option>USA</option>
+                                <option>Australia</option>
+                                <option>Austria</option>
+                                <option>Africa</option>
+                                <option>Japan</option>
+                                <option>China</option>
+                                <option>New Zealand</option>
+                                <option>Dubai</option>
+                                <option>India</option>
+                                <option>Taiwan</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="input_gap">State </td>
+                        <td class="input_gap"><input type="text" size="50" name="state_text" value=""/></td>
+                    </tr>
+                    <tr>
+                        <td class="input_gap">City </td>
+                        <td class="input_gap"><input type="text" size="50" name="city_text" value=""/></td>
+                    </tr>
+                    <tr>
+                        <td class="input_gap">PIN Code </td>
+                        <td class="input_gap"><input type="text" size="50" name="pin_code_text" value="" placeholder="XXXXXX"/></td>
+                    </tr>
+                    <tr>
+                        <td class="input_gap">New Password </td>
+                        <td class="input_gap"><input type="password" size="50" name="pin_code_text" value=""/></td>
+                    </tr>
+                </tbody>
+            </table>
+                <span class="sign_up_button"><input value="Sign Up" name="sign_up_button" type="submit"/></span>
+                <input type="reset" value="Clear" name="reset_button"/>
+            </div>
+        </form>
+       
+        
+        
+         <%-- This is for Sign IN--%>
+        
+       <form action="sign_in.jsp" method="POST" name="sign_in_form">
+          <div id="sign_in">
+               <h3 class="sign_in_heading">Sign In</h3>
+              <table border="0">
+                  <tbody>
+                      <tr>
+                          <td class="input_gap">Email </td>
+                          <td class="input_gap"><input type="email" name="sign_in_email_text" placeholder="mymail@mail.com" size="50"/></td>
+                      </tr>
+                      
+                      <tr>
+                          <td class="input_gap">Password </td>
+                          <td class="input_gap"><input type="password" name="sign_in_password_text" size="50"/></td>
+                          
+                      </tr>
+                  </tbody>
+              </table>
+               <span class="sign_in_button"> <input type="submit" value="Sign In" name="sign_in_button" /></span>
+          </div>
+               
+           
+           
+           
+       </form>
+            
+            
+            
+        
+        
+        <script   src="https://code.jquery.com/jquery-1.12.4.js"   integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="   crossorigin="anonymous"></script>
+        <script src="bootstrap.js"></script>  
+        
+    </body>
+</html>
