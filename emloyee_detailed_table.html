@@ -1,0 +1,280 @@
+<%-- 
+    Document   : Employee_Detailed_table
+    Created on : Dec 18, 2017, 10:21:34 PM
+    Author     : Shivanshu Gupta
+--%>
+
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Employee Detailed Table</title>
+        <script src="jquery-3.1.0.min.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        
+        <style>
+            .emplyee_detailed_table_heading
+            {
+                color: white;
+                font-family: century gothic;
+            }
+            .body
+            {
+                background-color: #6666ff;
+                
+                
+            }
+            #create_table
+            {
+                border: 1px #6666ff solid;
+                width: 960px;
+                padding: 10px 10px 10px 10px;
+                color: white;
+                font-family: arial;
+                margin-left: 440px;
+                margin-top: 50px;
+            }
+            #create
+            {
+                border: 1px #6666ff solid;
+                width: 550px;
+                padding: 10px 10px 10px 10px;
+                color: white;
+                font-family: arial;
+                margin-left: 365px;
+                margin-top: 50px;
+                background-color: #0000ff;
+            }
+            #database_btn
+            {
+                font-family: arial;
+                margin-left: 455px;
+            }
+            ._name
+            {
+                padding-bottom: 12px;
+            }
+            .andtext
+            {
+                padding-bottom: 12px;
+                padding-left: 160px;
+                
+            }
+            #table_form
+            {
+                border: 1px #6666ff solid;
+                width: 550px;
+                padding: 10px 10px 10px 10px;
+                color: white;
+                font-family: arial;
+                margin-left: 365px;
+                margin-top: 50px;
+                background-color: #ff6666;
+            }
+            #table_start_heading
+            {
+                font-family: Ebrima;
+                color: white;
+                border: 1px #6666ff solid;
+                margin: 30px auto;
+                width: 960px;
+                padding: 10px 10px 10px 10px;
+                font-weight: bold;
+            }
+            .table_text
+            {
+                padding-bottom: 12px;
+            }
+            .put_table_text
+            {
+                padding-left: 100px;
+                padding-bottom: 12px;
+            }
+            .subbmit_btn
+            {
+                font-family: arial;
+                margin-left: 260px;
+            }
+            #new_table
+            {
+                border: 1px #6666ff solid;
+                width: 550px;
+                padding: 10px 10px 10px 10px;
+                color: white;
+                font-family: arial;
+                margin-left: 365px;
+                margin-top: 50px;
+                background-color: #33cc00;
+            }
+        </style>
+    </head>
+    <body class="body">
+        <h1 align="center" class="emplyee_detailed_table_heading">Employee Detailed Table</h1>
+        
+        
+          <form name="database_fomr" action="create.jsp" method="POST" target="_blank"> 
+        <div id="create">
+            <table border="0">
+                
+                <tbody>
+                    <tr>
+                        <td class="_name">Name of Database  </td>
+                        <td class="_name"><input type="text" value="" name="database_text" size="60"/></td>
+                    </tr>
+                    <tr>
+                        <td class="_name"></td>
+                        <td class="andtext">&</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="_name">Name of Table</td>
+                        <td class="_name"><input type="text" value="" name="table_text" size="60"/></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <input type="submit" value="Create it" name="create_database_btn" id="database_btn" />
+            
+        </div>
+         </form>
+        <div id="table_start_heading">
+            <h2 align="center">Let's start with Table</h2>
+        </div>
+        
+        
+        
+        
+        
+        
+        <form action="employee_feed_table_detailed.jsp" method="POST" name="table_form" target="_blank">
+            <div id="table_form">
+            <table border="0">
+                <tbody>
+                    <tr>
+                        <td class="table_text">Database Name: </td>
+                        <td class="table_text"><input value="" type="text" size="60" name="table_database_text"></td>
+                    </tr>
+                    <tr>
+                        <td class="table_text">Table Name:</td>
+                        <td class="table_text"><input value="" type="text" size="60" name="table_table_name_text"></td>
+                    </tr>
+                    <tr>
+                        <td class="table_text"></td>
+                        <td class="put_table_text">Put your Data</td>
+                    </tr>
+                    <tr>
+                        <td class="_name">Employee Name: </td>
+                        <td class="_name"><input type="text" size="60" value="" placeholder="John" name="employee_name_text"/></td>
+                    </tr>
+                    <tr>
+                        <td class="_name">Contact No.1 </td>
+                        <td class="_name"><input type="text" size="60" value="" name="contact_1_text"/></td>
+                    </tr>
+                    <tr>
+                        <td class="_name">Contact No.2 </td>
+                        <td class="_name"><input type="text" size="60" value="" name="contact_2_text"/></td>
+                    </tr>
+                    <tr>
+                        <td class="_name">Address 1 :  </td>
+                        <td class="_name"><input type="text" size="60" value="" name="address_1_text"/></td>
+                    </tr>
+                    <tr>
+                        <td class="_name">Address 2 :  </td>
+                        <td class="_name"><input type="text" size="60" value="" name="address_2_text"/></td>
+                    </tr>
+                    <tr>
+                        <td class="_name">Email:  </td>
+                        <td class="_name"><input type="text" size="60" value="" name="email_text"/></td>
+                    </tr>
+                    <tr>
+                        <td class="_name">Post  </td>
+                        <td class="_name"><input type="text" size="60" value="" name="post_text"/></td>
+                    </tr>
+                    <tr>
+                        <td class="_name">Date of Birth:  </td>
+                        <td class="_name"><input type="text" size="60" value="" name="date_of_birth_text"/></td>
+                    </tr>
+                    <tr>
+                        <td class="_name">Father Name:  </td>
+                        <td class="_name"><input type="text" size="60" value="" name="father_name_text"/></td>
+                    </tr>
+                    <tr>
+                        <td class="_name">Country:  </td>
+                                <td class="_name"><select name="country_select">
+                                        <option>India</option>
+                                        <option>United States of America</option>
+                                        <option>Australia</option>
+                                        <option>Sri Lanka</option>
+                                        <option>China</option>
+                                        <option>Japan</option>
+                                        <option>Taiwan</option>
+                                        <option>New Zealand</option>
+                                </select></td>
+                    </tr>
+                    <tr>
+                        <td class="_name">State:  </td>
+                        <td class="_name"><input type="text" size="60" value="" name="state_text" placeholder="New York"/></td>
+                    </tr>
+                    <tr>
+                        <td class="_name">City:  </td>
+                        <td class="_name"><input type="text" size="60" value="" name="city_text" placeholder="Jankaviz"/></td>
+                    </tr>
+                    <tr>
+                        <td class="_name">Pin Code:  </td>
+                        <td class="_name"><input type="text" size="60" value="" name="pin_code_text" placeholder="X-X-X-X-X-X-X-X"/></td>
+                    </tr>
+                </tbody>
+            </table>
+                <input type="submit" value="Submit" name="submit_button" class="subbmit_btn"/>
+            </div>
+        </form>
+            
+        <div id="table_start_heading">
+            <h2 align="center">Add a new Table</h2>
+        </div>
+        
+        
+        <form name="new_table_form" action="new_table.jsp" method="POST" target="_blank">
+            <div id="new_table">
+                <table border="0">
+                    
+                    <tbody>
+                        <tr>
+                            <td class="_name">Database Name: </td>
+                            <td class="_name"><input type="text" name="new_table_database" value="" size="60" /></td>
+                        </tr>
+                        <tr>
+                            <td class="_name">New Table Name: </td>
+                            <td class="_name"><input type="text" name="new_table_name" value="" size="60" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <input type="submit" value="Create Table" name="create_table_btn" class="subbmit_btn" />
+            </div>
+            
+            
+        </form>
+                
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <script   src="https://code.jquery.com/jquery-1.12.4.js"   integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="   crossorigin="anonymous"></script>
+        <script src="bootstrap.js"></script>  
+    </body>
+</html>
