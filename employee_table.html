@@ -1,0 +1,213 @@
+<%-- 
+    Document   : employee_table
+    Created on : Dec 20, 2017, 2:29:04 AM
+    Author     : Shivanshu Gupta
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Employee Data Table</title>
+        <style>
+            .emplyee_data_table_heading
+            {
+                color: white;
+                font-family: century gothic;
+            }
+            .body
+            {
+                background-color: #ff33ff;
+            }
+            #create
+            {
+                border: 1px #6666ff ;
+                width: 550px;
+                padding: 10px 10px 10px 10px;
+                color: white;
+                font-family: arial;
+                margin-left: 365px;
+                margin-top: 50px;
+                background-color: #00cc33;
+            }
+            ._name
+            {
+                padding-bottom: 12px;
+            }
+            .andtext
+            {
+                padding-bottom: 12px;
+                padding-left: 160px;
+                
+            }
+            #database_btn
+            {
+                font-family: arial;
+                margin-left: 455px;
+            }
+            #table_form
+            {
+                border: 1px #6666ff ;
+                width: 550px;
+                padding: 10px 10px 10px 10px;
+                color: white;
+                font-family: arial;
+                margin-left: 365px;
+                margin-top: 50px;
+                background-color: #ff6666;
+            }
+            .table_text
+            {
+                padding-bottom: 12px;
+            }
+            .subbmit_btn
+            {
+                font-family: arial;
+                margin-left: 260px;
+            }
+            .put_table_text
+            {
+                padding-left: 100px;
+                padding-bottom: 12px;
+            }
+            #table_start_heading
+            {
+                font-family: Ebrima;
+                color: white;
+                border: 1px #ff33ff ;
+                margin: 30px auto;
+                width: 960px;
+                padding: 10px 10px 10px 10px;
+                font-weight: bold;
+            }
+            #new_table
+            {
+                border: 1px #6666ff ;
+                width: 550px;
+                padding: 10px 10px 10px 10px;
+                color: white;
+                font-family: arial;
+                margin-left: 365px;
+                margin-top: 50px;
+                background-color: #33cc00;
+            }
+            
+        </style>
+    </head>
+    <body class="body">
+        <h1 align="center" class="emplyee_data_table_heading">Employee Data Table</h1>
+        
+        <form name="database_fomr" action="create_employee_data_table.jsp" method="POST" target="_blank"> 
+        <div id="create">
+            <table border="0">
+                
+                <tbody>
+                    <tr>
+                        <td class="_name">Name of Database  </td>
+                        <td class="_name"><input type="text" value="" name="database_text" size="60"/></td>
+                    </tr>
+                    <tr>
+                        <td class="_name"></td>
+                        <td class="andtext">&</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="_name">Name of Table</td>
+                        <td class="_name"><input type="text" value="" name="table_text" size="60"/></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <input type="submit" value="Create it" name="create_database_btn" id="database_btn" />
+            
+        </div>
+         </form>
+        <div id="table_start_heading">
+            <h2 align="center">Let's start with Table</h2>
+        </div>
+        
+        <form action="employee_feed_table_detailed.jsp" method="POST" name="table_form" target="_blank">
+            <div id="table_form">
+            <table border="0">
+                <tbody>
+                    <tr>
+                        <td class="table_text">Database Name: </td>
+                        <td class="table_text"><input value="" type="text" size="60" name="table_database_text"></td>
+                    </tr>
+                    <tr>
+                        <td class="table_text">Table Name:</td>
+                        <td class="table_text"><input value="" type="text" size="60" name="table_table_name_text"></td>
+                    </tr>
+                    <tr>
+                        <td class="table_text"></td>
+                        <td class="put_table_text">Put your Data</td>
+                    </tr>
+                    <tr>
+                        <td class="_name">Employee Name: </td>
+                        <td class="_name"><input type="text" size="60" value="" placeholder="John" name="employee_name_text"/></td>
+                    </tr>
+                    <tr>
+                        <td class="_name">Contact No. </td>
+                        <td class="_name"><input type="text" size="60" value="" name="contact_1_text"/></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="_name">Address:  </td>
+                        <td class="_name"><input type="text" size="60" value="" name="address_1_text"/></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="_name">Email:  </td>
+                        <td class="_name"><input type="text" size="60" value="" name="email_text"/></td>
+                    </tr>
+                    <tr>
+                        <td class="_name">Post  </td>
+                        <td class="_name"><input type="text" size="60" value="" name="post_text"/></td>
+                    </tr>
+                    <tr>
+                        <td class="_name">Date of Birth:  </td>
+                        <td class="_name"><input type="text" size="60" value="" name="date_of_birth_text"/></td>
+                    </tr>
+                    <tr>
+                        <td class="_name">Father Name:  </td>
+                        <td class="_name"><input type="text" size="60" value="" name="father_name_text"/></td>
+                    </tr>
+                    
+                   
+                </tbody>
+            </table>
+                <input type="submit" value="Submit" name="submit_button" class="subbmit_btn"/>
+            </div>
+        </form>
+        
+        
+        <div id="table_start_heading">
+            <h2 align="center">Add a new Table</h2>
+        </div>
+        
+        
+        <form name="new_table_form" action="new_table.jsp" method="POST" target="_blank">
+            <div id="new_table">
+                <table border="0">
+                    
+                    <tbody>
+                        <tr>
+                            <td class="_name">Database Name: </td>
+                            <td class="_name"><input type="text" name="new_table_database" value="" size="60" /></td>
+                        </tr>
+                        <tr>
+                            <td class="_name">New Table Name: </td>
+                            <td class="_name"><input type="text" name="new_table_name" value="" size="60" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <input type="submit" value="Create Table" name="create_table_btn" class="subbmit_btn" />
+            </div>
+            
+            
+        </form>
+        
+        
+    </body>
+</html>
