@@ -290,10 +290,10 @@
        
        
        
-       <form action="project_Y.jsp" method="POST" name="project_y_form">
+       
            
            
-           
+        <form action="project_Y.jsp" method="POST" name="project_y_form" target="_blank">     
            <div id="project_y">
                <%
             String emaily2=request.getParameter("sign_in_email_text");
@@ -313,7 +313,7 @@
                 String email1y=rs.getString("Email");
                 
         %>
-        <input type="hidden" name="text_working_email" size="50" disabled="disabled" value=<%= email1y%>>
+        <input type="hidden" name="text_working_email" size="50" value=<%= email1y%>>
      <%
                 
                 
@@ -325,8 +325,10 @@
                 out.println(e);
             
             }
+            
         %>
-               <table border="0">
+             
+        <table border="0">
                    <tbody>
                         <tr>
                             <td class="input_fields1">Name of Database: </td>
@@ -382,11 +384,11 @@
                     <input type="submit" name="your_table_btn" value="Submit" class="your_table_button" />
                
                
+           
+           
+           
            </div>
-           
-           
-       </form>
-            
+            </form>
         
         
         
